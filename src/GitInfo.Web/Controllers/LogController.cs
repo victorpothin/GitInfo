@@ -1,5 +1,6 @@
 using GitInfo.Domain.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace GitInfo.Web.Controllers
 {
@@ -7,13 +8,16 @@ namespace GitInfo.Web.Controllers
     [Route("log")]
     public class LogController : ControllerBase
     {
-        public LogController()
+        private readonly ILogger<LogController> _logger;
+        public LogController(ILogger<LogController> logger)
         {
+            _logger = logger;
         }
 
         [HttpGet]
         public ActionResult Get()
         {
+            _logger.LogInformation("ok logando");
             return Ok("ok");
         }
     }
