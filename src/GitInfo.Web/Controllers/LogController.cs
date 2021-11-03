@@ -20,5 +20,12 @@ namespace GitInfo.Web.Controllers
             _logger.LogInformation("ok logando");
             return Ok("ok");
         }
+
+        [HttpPost]
+        public ActionResult Post(object obj)
+        {
+            _logger.LogInformation(obj);
+            return Ok("ok");
+        }
     }
 }
