@@ -24,7 +24,7 @@ namespace GitInfo.Web.Controllers
         [HttpPost]
         public ActionResult Post(object obj)
         {
-            _logger.LogInformation(obj);
+            _logger.LogInformation(obj.ToString());
             return Ok("ok");
         }
     }
