@@ -12,7 +12,7 @@ namespace GitInfo.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult Get(string route)
+        public ActionResult Get()
         {
             return Ok("ok");
         }
